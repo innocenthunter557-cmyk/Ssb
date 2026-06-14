@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  overflow-x: hidden;
+  background: #f8f4ea;
+  color: #111;
+}
+
+.gold-text {
+  color: #d4af37;
+}
+
+.gold-btn {
+  background: #d4af37;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.section {
+  padding: 80px 20px;
+}
