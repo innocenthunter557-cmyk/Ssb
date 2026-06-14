@@ -1,63 +1,16 @@
 
 @import 'tailwindcss';
 @import 'tw-animate-css';
+/* 1. Add these three lines at the very top */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+/* ... your other shadcn variables or styles might be here ... */
 
-:root {
-  /* Premium Luxury Cream & Grey Color Scheme */
-  --background: oklch(0.98 0.015 75);       /* Warm Luxury Cream */
-  --foreground: oklch(0.25 0.01 45);       /* Deep Charcoal Grey text */
-  --card: oklch(1 0 0);                    /* Pure White for item cards */
-  --card-foreground: oklch(0.25 0.01 45);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.01 45);
-  
-  /* Primary accents are elegant dark grey/gold tones */
-  --primary: oklch(0.28 0.015 50);          /* Rich Premium Slate Grey */
-  --primary-foreground: oklch(0.98 0.01 70);/* Cream tint text on primary buttons */
-  --secondary: oklch(0.94 0.02 75);         /* Muted Cream-Grey for secondary elements */
-  --secondary-foreground: oklch(0.25 0.01 45);
-  --muted: oklch(0.95 0.01 60);             /* Soft Grey border/shading */
-  --muted-foreground: oklch(0.45 0.01 50);
-  --accent: oklch(0.85 0.04 80);            /* Soft Luxury Champagne/Gold accent */
-  --accent-foreground: oklch(0.25 0.01 45);
-  
-  --destructive: oklch(0.55 0.18 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.90 0.01 60);           /* Smooth thin borders */
-  --input: oklch(0.90 0.01 60);
-  --ring: oklch(0.45 0.01 50);
-  --radius: 0.75rem;
-}
-
-@theme inline {
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-border: var(--border);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
+/* 2. Your existing layer code (around line 56) will now work perfectly */
 @layer base {
   body {
     @apply bg-background text-foreground antialiased font-sans;
-  }
-  h1, h2, h3, h4 {
-    @apply font-serif tracking-wide;
   }
 }
