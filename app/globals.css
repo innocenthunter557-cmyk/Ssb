@@ -1,14 +1,43 @@
-
 @import 'tailwindcss';
 @import 'tw-animate-css';
-/* 1. Add these three lines at the very top */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* ... your other shadcn variables or styles might be here ... */
+@custom-variant dark (&:is(.dark *));
 
-/* 2. Your existing layer code (around line 56) will now work perfectly */
+:root {
+  /* Premium Luxury Cream & Grey Color Scheme */
+  --background: oklch(0.98 0.01 75);
+  --foreground: oklch(0.25 0.01 45);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.01 45);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.01 45);
+  --primary: oklch(0.28 0.015 50);
+  --primary-foreground: oklch(0.98 0.01 75);
+  --secondary: oklch(0.94 0.02 75);
+  --secondary-foreground: oklch(0.25 0.01 45);
+  --muted: oklch(0.95 0.01 60);
+  --muted-foreground: oklch(0.45 0.01 50);
+  --accent: oklch(0.85 0.04 80);
+}
+
+/* ─── ADD THIS BLOCK SO TAILWIND V4 SEES YOUR UTILITIES ─── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+}
+
+/* Your body styles around line 56 will now work perfectly */
 @layer base {
   body {
     @apply bg-background text-foreground antialiased font-sans;
